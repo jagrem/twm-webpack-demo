@@ -27,7 +27,7 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
     plugins: [
-        new HtmlWebpackPlugin({ title: 'Tauranga Web Meetup Webpack Demo', template: path.resolve('Index.html') })
+        new HtmlWebpackPlugin({ title: 'Tauranga Web Meetup Webpack Demo', hash: true, template: path.resolve('Index.html') })
     ],
     devtool: 'source-map'
 }
