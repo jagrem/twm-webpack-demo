@@ -1,0 +1,11 @@
+{
+  "name": "twm-webpack-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "jagrem <jagremc@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
