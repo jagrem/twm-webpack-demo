@@ -1,0 +1,1 @@
+ReactDOM.render(React.createElement('h1', { className: 'title' }, "Tauranga Web Meetup"), document.getElementById('app'));
