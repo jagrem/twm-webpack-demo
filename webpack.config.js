@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const merge = require('webpack-merge')
+const BabiliPlugin = require('babili-webpack-plugin')
 
 const commonConfig = {
     entry: path.resolve('js', 'index.js'),
@@ -32,7 +33,11 @@ const commonConfig = {
     ]
 }
 
-const productionConfig = {}
+const productionConfig = {
+    plugins: [
+        new BabiliPlugin()
+    ]
+}
 
 const developmentConfig = {
     devtool: 'source-map'
