@@ -1,7 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const merge = require('webpack-merge')
 
-module.exports = {
+const commonConfig = {
     entry: path.resolve('js', 'index.js'),
     output: {
         path: path.resolve('BuildOutput'),
@@ -28,6 +29,19 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({ title: 'Tauranga Web Meetup Webpack Demo', hash: true, template: path.resolve('Index.html') })
-    ],
+    ]
+}
+
+const productionConfig = {}
+
+const developmentConfig = {
     devtool: 'source-map'
+}
+
+module.exports = (env) => {
+    if(env === 'production') {
+        return merge(commonConfig, productionConfig)
+    }
+
+    return merge(commonConfig, developmentConfig)
 }
