@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const merge = require('webpack-merge')
 const BabiliPlugin = require('babili-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const commonConfig = {
     entry: path.resolve('js', 'index.js'),
@@ -43,9 +44,21 @@ const developmentConfig = {
     devtool: 'source-map'
 }
 
+const visualizationConfig = {
+    plugins: [
+        new BundleAnalyzerPlugin({
+            analyzerMode: 'static'
+        })
+    ]
+}
+
 module.exports = (env) => {
     if(env === 'production') {
         return merge(commonConfig, productionConfig)
+    }
+
+    if(env === 'visualize') {
+        return merge(commonConfig, productionConfig, visualizationConfig)
     }
 
     return merge(commonConfig, developmentConfig)
