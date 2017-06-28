@@ -5,7 +5,7 @@ const BabiliPlugin = require('babili-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const commonConfig = {
-    entry: path.resolve('js', 'index.js'),
+    entry: path.resolve('Source', 'index.js'),
     output: {
         path: path.resolve('BuildOutput'),
         filename: '[name].js'
