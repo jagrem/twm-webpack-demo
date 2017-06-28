@@ -1,7 +1,9 @@
 import React from 'react'
+import Title from './Components/Title'
+import './App.css'
 
 export default class App extends React.Component {
     render() {
-        return <h1 className="title">Tauranga Web Meetup</h1>
+        return <Title />
     }
 }
